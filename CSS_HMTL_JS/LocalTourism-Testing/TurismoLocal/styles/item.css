@@ -1,0 +1,87 @@
+:root {
+    --color-primary: #2B8FA7;
+    --color-dark: #023047;
+    --color-accent: #219EBC;
+    --color-blue-strong: #284CA0;
+    --color-blue-light: #0081F9;
+    --color-soft-blue: #AEDFF5;
+    --color-soft-indigo: #DEE7FF;
+    --color-orange: #FB8500;
+    --color-yellow: #FFEA74;
+  }
+
+/*tamanho geral*/
+.Item-main{
+    width: 350px;
+    height: 350px;
+}
+.Item-main > p{
+    font-size: large;
+}
+.Item-main > a > button{
+    font-size: x-large;
+    padding: 5px 10px 5px 10px;
+}
+
+/*fim*/
+
+.Item-main{
+    background-color: var(--color-soft-blue);
+    border-radius: 5px;
+    margin: 0px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
+}
+
+.Item-main > div{
+    width: 100%;
+    border-radius: 5px;
+    background-image: url(../imagens/oficiais/sem-imagem.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40%;
+}
+
+.Item-main > p {
+    text-align: justify;
+    height: 30%;
+    padding: 5px;
+    overflow: hidden;
+}
+.Item-main > a{
+    text-decoration: none;
+}
+
+.Item-main > a > button{
+    margin: auto;
+    display: flex;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    background-color: var(--color-dark);
+}
+
+.Item-main > a > button:hover{
+    background-color: var(--color-orange);
+    color: var(--color-dark);
+}
+
+.Item-main > a > button:active{
+    box-shadow: 0px 0px 10px var(--color-orange);
+}
+
+@media screen and (max-width: 700px){
+  /*tamanho geral*/
+.Item-main{
+    width: 200px;
+    height: 200px;
+}
+.Item-main > p{
+    font-size: small;
+    height: 20%;
+}
+.Item-main > a > button{
+    font-size: medium;
+    padding: 5px 10px 5px 10px;
+}
+}

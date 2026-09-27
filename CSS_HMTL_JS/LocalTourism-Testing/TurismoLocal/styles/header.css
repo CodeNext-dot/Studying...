@@ -1,0 +1,145 @@
+:root {
+  --color-primary: #2B8FA7;
+  --color-dark: #023047;
+  --color-accent: #219EBC;
+  --color-blue-strong: #284CA0;
+  --color-blue-light: #0081F9;
+  --color-soft-blue: #AEDFF5;
+  --color-soft-indigo: #DEE7FF;
+  --color-soft-indigo2: #d7e1ff;
+  --color-orange: #FB8500;
+  --color-yellow: #FFEA74;
+}
+
+/*
+pequenas 600px pra baixo
+media 600 a 1200
+grande 1200 pra cima
+*/
+
+header{
+    background-image: url(../imagens/oficiais/farol-fundo.jpg);
+    background-color: var(--color-primary);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+}
+
+/*textos*/
+#header-texts{
+    padding: 15px;
+    font-size: 25px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+#header-texts > p, h1{
+    margin: 0;
+}
+
+#header-texts > p{
+    color: var(--color-yellow);
+    font-size: large;
+}
+
+/*imagens*/
+#header-imgs{
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header-imgs > button{
+    width: 25px;
+    height: 80px;
+    border: none;
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+
+#header-imgs > button:hover{
+    transition-duration: 0.2s;
+    background-color: var(--color-orange);
+}
+
+#header-imgs > button:active{
+    box-shadow: 0px 0px 10px var(--color-orange);
+}
+
+#header-imgs-imagens{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header-imgs-imagens1, #header-imgs-imagens2, #header-imgs-imagens3{
+    background-image: url(../imagens/oficiais/sem-imagem.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+#header-imgs-imagens1{
+    width: 10vw;
+    height: 35vh;
+    background-color: var(--color-soft-indigo2);
+    border-top: 5px solid white;
+    border-left: 5px solid white;
+    border-bottom: 5px solid white;
+    border-radius: 25px 0px 0px 25px;
+}
+#header-imgs-imagens2{
+    width: 60vw;
+    height: 60vh;
+    background-color: var(--color-soft-indigo2);
+    border: 5px solid white;
+    border-radius: 25px;
+}
+#header-imgs-imagens3{
+    width: 10vw;
+    height: 35vh;
+    background-color: var(--color-soft-indigo2);
+    border-top: 5px solid white;
+    border-right: 5px solid white;
+    border-bottom: 5px solid white;
+    border-radius: 0px 25px 25px 0px;
+}
+
+/*continuar descida*/
+#header-continue{
+    width: 90vw;
+    height: 8vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header-continue > button{
+    width: 90px;
+    height: 25px;
+    border: none;
+    background-color: antiquewhite;
+    border-radius: 20px;
+}
+
+#header-continue > button:hover{
+    transition-duration: 0.2s;
+    background-color: var(--color-orange);
+}
+
+#header-continue > button:active{
+    box-shadow: 0px 0px 10px var(--color-orange);
+}
+
+@media screen and (max-width: 700px){
+
+}
+
+@media screen and (min-width: 700px){
+}

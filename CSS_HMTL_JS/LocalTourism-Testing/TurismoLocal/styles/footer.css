@@ -1,0 +1,17 @@
+:root {
+  --color-primary: #2B8FA7;
+  --color-dark: #023047;
+  --color-accent: #219EBC;
+  --color-blue-strong: #284CA0;
+  --color-blue-light: #0081F9;
+  --color-soft-blue: #AEDFF5;
+  --color-soft-indigo: #DEE7FF;
+  --color-orange: #FB8500;
+  --color-yellow: #FFEA74;
+}
+
+footer{
+  width: 100%;
+  height: 30px;
+  background-color: var(--color-dark);
+}

@@ -1,0 +1,142 @@
+<!--colocar as cores certas e ingressas no site principal, ignorar o heander-->
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pagina completa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/blogstyle.css">
+    <link rel="icon" href="imagens/oficiais/farol-icon.png" type="image/png">
+</head>
+<body>
+    <header>
+        <nav id="nav-original" style="background-color: rgba(49, 117, 180, 0.288);">
+            <div></div> <!--imagem icone-->
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-circle-half-stroke"></i></a></li>
+                <li><a href="#">idioma</a></li>
+                <li><a href="https://www.jpagenda.com/event-list" target="_blank">calendario de eventos</a></li>
+            </ul>
+        </nav>
+        <nav id="nav-clone">
+            <div></div>
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-circle-half-stroke"></i></a></li>
+                <li><a href="#">idioma</a></li>
+                <li><a href="https://www.jpagenda.com/event-list " target="_blank">calendario de eventos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="inf1">
+            <div>
+                <a href="Landing-page.html"><button id="voltarbutton">voltar</button></a>
+            </div>
+            <div>
+                <h1 id="nome"></h1>
+                <h4 id="cidade">João Pessoa</h4>
+                <h2>Historia</h2>
+                <p id="historia"></p>
+                <h2>Descrição</h2>
+                <p id="descricaoCompleta"></p>
+                <h2>Como chegar</h2>
+                <div id="maps">
+                    <div class="mapa">
+                        <iframe id="mapa" style="width: 100%; height: 300px; border: 2px solid black; border-radius: 10px;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="inf2">
+            <h2>Imagens</h2>
+            <div id="imagens">
+                <div style="width: 80%; display: flex; justify-content: center; align-items: center;">
+                    <div id="imagens-principal"></div>
+                </div>
+                <div style="width: 20%;">
+                    <div id="imagens-1" class="imagens-mini"></div>
+                    <div id="imagens-2" class="imagens-mini"></div>
+                    <div id="imagens-3" class="imagens-mini"></div>
+                    <div id="imagens-4" class="imagens-mini"></div>
+                </div>
+            </div>
+            <p id="avaliacaogeral">Avaliação Geral: <strong>4.7</strong></p>
+            <div id="comentarios">
+                <h2>Comentarios</h2>
+                <div class="comentario">
+                    <div class="usuario-info">
+                        <h4></h4>
+                        <p></p>
+                    </div>
+                    <div class="comentario-texto">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="comentario">
+                    <div class="usuario-info">
+                        <h4></h4>
+                        <p></p>
+                    </div>
+                    <div class="comentario-texto">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
+<script src="scripts/nav.js"></script>
+<script src="scripts/dadosbuscador.js"></script>
+<script>
+// 1. Pegar o parâmetro "id" da URL
+  const params = new URLSearchParams(window.location.search);
+  const id = parseInt(params.get("id"));
+
+  // 2. Buscar o ponto turístico no JSON carregado de dadosbuscador.js
+  const ponto = data.pontosTuristicos.find(p => p.id === id);
+
+  // 3. Preencher os elementos
+  document.getElementById("nome").innerText = ponto.nome;
+  document.getElementById("cidade").innerText = ponto.cidade;
+  document.getElementById("historia").innerText = ponto.detalhes.historia;
+  document.getElementById("descricaoCompleta").innerText = ponto.detalhes.descricaoCompleta;
+
+  // 4. Preencher o mapa usando o texto salvo no JSON
+  document.getElementById("mapa").src =
+    `https://www.google.com/maps?q=${encodeURIComponent(ponto.detalhes.maps)}&output=embed`;
+
+  // 5. Imagem principal
+  document.getElementById("imagens-principal").style.backgroundImage = `url(${ponto.imagemPrincipal})`;
+
+  // 6. Imagens extras
+  // ponto.detalhes.maisImagens.forEach((img, index) => {
+  //  const el = document.getElementById(`imagens-${index+1}`);
+  //  if (el) el.style.backgroundImage = `url(${img})`;
+  //});
+
+  // 7. Avaliação geral
+  document.getElementById("avaliacaogeral").innerHTML =
+    `Avaliação Geral: <strong>${ponto.detalhes.avaliacao.media}</strong>`;
+
+  // 8. Comentários
+  const comentariosDiv = document.getElementById("comentarios");
+  comentariosDiv.innerHTML = "<h2>Comentários</h2>";
+  ponto.detalhes.avaliacao.comentarios.forEach(c => {
+    comentariosDiv.innerHTML += `
+      <div class="comentario">
+        <div class="usuario-info">
+          <h4>${c.usuario}</h4>
+          <p>Nota: ${c.nota}</p>
+        </div>
+        <div class="comentario-texto">
+          <p>"${c.texto}"</p>
+        </div>
+      </div>
+    `;
+  });
+</script>

@@ -1,0 +1,96 @@
+:root {
+  --color-primary: #2B8FA7;
+  --color-dark: #023047;
+  --color-accent: #219EBC;
+  --color-blue-strong: #284CA0;
+  --color-blue-light: #0081F9;
+  --color-soft-blue: #AEDFF5;
+  --color-soft-indigo: #DEE7FF;
+  --color-soft-indigo2: #d7e1ff;
+  --color-orange: #FB8500;
+  --color-yellow: #FFEA74;
+}
+
+
+/*navegação superior*/
+#nav-clone {
+  display: flex;                  
+  position: fixed;
+  background-color: var(--color-accent);
+  padding: 0px 20px 0px 5px;
+  opacity: 0;                     
+  top: 0;
+  left: 0;
+  width: 100vw;
+  transition: opacity 0.4s ease;
+  pointer-events: none;         
+}
+
+#nav-clone.active {
+  opacity: 0.98;               
+  pointer-events: auto;
+}
+
+#nav-original{
+    padding: 0px 5px;
+}
+
+header > nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header > nav > div{
+    background-image: url("../imagens/oficiais/icon-farol-v2.png");
+    background-color: #284CA0;
+    background-size: 100px;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    opacity: 80%;
+    width: 20vw;
+    max-width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+header > nav > ul{
+    width: 70vw;
+    gap: 20px;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    font-style: italic;
+}
+
+header > nav > ul > li{
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.92;
+}
+
+header > nav > ul > li a{
+    color: white;
+}
+
+header > nav > ul > li a:hover{
+    color: var(--color-yellow);
+}
+
+
+header > nav > ul > li > a i{
+    position: relative;
+    top: 1px;
+}
+
+@media screen and (max-width: 700px){
+    header > nav > ul{
+        display: none;
+    }
+    .nav-minimizada{
+        display: flex;
+    }
+
+}
