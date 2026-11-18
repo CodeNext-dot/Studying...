@@ -1,0 +1,1 @@
+SELECT nome, idade from estudantes WHERE idade >= 19;

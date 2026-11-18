@@ -1,0 +1,1 @@
+ALTER TABLE funcionarios RENAME to estudantes;
