@@ -1,6 +1,0 @@
-CREATE TABLE clientes(
-	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	nome TEXT NOT NULL,
-	cidade TEXT,
-	idade INTEGER
-);

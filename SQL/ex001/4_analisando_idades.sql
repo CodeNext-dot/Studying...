@@ -1,1 +1,0 @@
-SELECT * from clientes WHERE idade > 30
